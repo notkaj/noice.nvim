@@ -5,7 +5,7 @@ local Hacks = require("noice.util.hacks")
 
 local M = {}
 
-M.islist = vim.islis
+M.islist = vim.islist
 
 M.stats = require("noice.util.stats")
 M.call = require("noice.util.call")
