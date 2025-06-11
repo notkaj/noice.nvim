@@ -12,7 +12,7 @@ local M = {}
 -- Formats the content and adds it to the message
 ---@param contents MarkupContents Markup content
 function M.format_markdown(contents)
-  if type(contents) ~= "table" or not Util.islist(contents) then
+  if type(contents) ~= "table" or not vim.islist(contents) then
     contents = { contents }
   end
 
@@ -27,7 +27,7 @@ function M.format_markdown(contents)
       table.insert(parts, content.value)
     elseif content.kind == "plaintext" then
       table.insert(parts, ("```\n%s\n```"):format(content.value))
-    elseif Util.islist(content) then
+    elseif vim.islist(content) then
       vim.list_extend(parts, M.format_markdown(content))
     end
     -- ignore other types of content (invalid content)

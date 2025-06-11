@@ -5,8 +5,6 @@ local Hacks = require("noice.util.hacks")
 
 local M = {}
 
-M.islist = vim.islist
-
 M.stats = require("noice.util.stats")
 M.call = require("noice.util.call")
 M.nui = require("noice.util.nui")
@@ -243,9 +241,9 @@ function M.is_blocking(opts)
   end
 
   local reason = opts.blocking and mode.blocking and "blocking"
-    or opts.mode and blocking_mode and ("mode:" .. mode.mode)
-    or #require("noice.ui.cmdline").cmdlines > 0 and "cmdline"
-    or nil
+      or opts.mode and blocking_mode and ("mode:" .. mode.mode)
+      or #require("noice.ui.cmdline").cmdlines > 0 and "cmdline"
+      or nil
   return reason ~= nil, reason
 end
 

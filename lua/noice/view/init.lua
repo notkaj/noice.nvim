@@ -104,7 +104,7 @@ function View:update_options() end
 function View:push(messages, opts)
   opts = opts or {}
 
-  messages = Util.islist(messages) and messages or { messages }
+  messages = vim.islist(messages) and messages or { messages }
   ---@cast messages NoiceMessage[]
 
   for _, message in ipairs(messages) do
@@ -212,7 +212,7 @@ end
 function View:content()
   return table.concat(
     vim.tbl_map(
-      ---@param m NoiceMessage
+    ---@param m NoiceMessage
       function(m)
         return m:content()
       end,

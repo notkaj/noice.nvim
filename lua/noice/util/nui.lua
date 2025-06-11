@@ -102,7 +102,7 @@ function M.normalize_padding(opts)
     opts = { style = opts }
   end
 
-  if Util.islist(opts.padding) then
+  if vim.islist(opts.padding) then
     if #opts.padding == 2 then
       return {
         top = opts.padding[1],
